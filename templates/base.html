@@ -6,6 +6,17 @@
     <title>{% block title %}Base Title{% endblock %}</title>
 </head>
 <body>
-    {% block body %}Base Body{% endblock %}
+    <a href="/">Home</a>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'account_logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'account_login' %}">Login</a>
+    {% endif %}
+    <hr/>
+    {% block body %}
+        {% block content %}
+            Base Body
+        {% endblock %}
+    {% endblock %}
 </body>
 </html>
