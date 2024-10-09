@@ -2,5 +2,4 @@
 
 ## Used packages
 - Django
-- HTML/CSS
-- Bootstrap
+- TailwindCSS
